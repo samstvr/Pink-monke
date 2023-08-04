@@ -8,11 +8,11 @@ using PlayFab.ClientModels;
 public class Purchase : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
     [Header("COSMETICS")]
     public GameObject enable;
     public GameObject disable;
-    
+
     [Header("BUY")]
     public string CosmeticName;
     public int coinsPrice;
@@ -38,16 +38,16 @@ public class Purchase : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
-    
+
 
     public void BuyItem()
     {
         var request = new SubtractUserVirtualCurrencyRequest
         {
-            VirtualCurrency = "HS",
+            VirtualCurrency = "CK",
             Amount = coinsPrice
         };
         PlayFabClientAPI.SubtractUserVirtualCurrency(request, OnSubtractCoinsSuccess, OnError);
